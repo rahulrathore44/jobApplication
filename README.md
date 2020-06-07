@@ -1,2 +1,2 @@
-# jobportal
-Sample application built using Spring 
+# Job Application
+Sample application built using Spring Boot and JWT Authentication
