@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lab.jobportal.users.ApplicationUserRepository;
 import com.lab.jobportal.users.ApplicationUsers;
 
+import io.swagger.annotations.Api;
+@Api(value = "Sign up", description = "End Point for User Registeration")
 @RestController
 @RequestMapping(path = { USER_CONTEXT_PATH })
 public class UserController {

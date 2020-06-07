@@ -21,6 +21,8 @@ import com.lab.jobportal.config.JwtTokenUtil;
 import com.lab.jobportal.model.JwtRequest;
 import com.lab.jobportal.model.JwtResponse;
 
+import io.swagger.annotations.Api;
+@Api(value = "Authenticate", description = "End Point for JWT Token Generation")
 @RestController
 @CrossOrigin
 @RequestMapping(path = { USER_CONTEXT_PATH })
