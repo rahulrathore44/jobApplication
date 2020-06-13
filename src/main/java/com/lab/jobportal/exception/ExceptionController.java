@@ -2,6 +2,7 @@ package com.lab.jobportal.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -23,6 +24,12 @@ public class ExceptionController {
 	public ResponseEntity<Object> exception(RuntimeOperationException exception) {
 		return new ResponseEntity<Object>(new CustomMessage(exception.getExceptionMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	@ExceptionHandler(value = UsernameNotFoundException.class)
+	public ResponseEntity<Object> exception(UsernameNotFoundException exception) {
+		return new ResponseEntity<Object>(new CustomMessage(exception.getMessage()),HttpStatus.UNAUTHORIZED);
+	}
+	
 }
 
 
