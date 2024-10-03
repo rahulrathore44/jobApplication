@@ -22,8 +22,12 @@ Run the following command to build the image and tags it as `springio/job-applic
 
 `mvn package`
 
-`docker build -t springio/job-application`
+`docker build -t springio/job-application .`
 
 Run the container using the image 
 
 `docker run -d -p <application-port>:<expose-port> springio/job-application`
+
+Example: `docker run -d -p 9191:8989 springio/job-application`
+
+You can access the application on port **8989**
